@@ -1,3 +1,3 @@
-# learnwithgurpreet
+# Photography Portfolio
 
-Personal blog deployed [learnwithgurpreet.com](https://learnwithgurpreet.com)
+[photo.learnwithgurpreet.com](https://photo.learnwithgurpreet.com)
