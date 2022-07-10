@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!-- Begin Head -->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>ShutterSingh.com</title>
+
+  <meta name="description" content="Photography showcase by ShutterSingh" />
+  <meta name="keywords" content="HTML, CSS, JavaScript, Responsive, Photography" />
+  <meta name="author" content="Gurpreet Singh" />
+
+  <!-- Begin Stylesheets -->
+  <link href="/assets/css/styles.css" rel="stylesheet">
+  <link href="/assets/css/magnific-popup.css" rel="stylesheet">
+  <!-- End Stylesheets -->
+</head>
+<!-- End Head -->
+<!-- Begin Body -->
+<body>
+  {% include "components/loader.njk" %}
+  {% include "components/header.njk" %}
+  {{ content | safe }}
+  {% include "components/footer.njk" %}
+<!-- End Body -->
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "shuttersingh.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass --watch assets/sass:_site/assets/css",
+    "build:sass": "sass assets/sass:_site/assets/css",
+    "watch:eleventy": "eleventy --serve",
+    "build:eleventy": "eleventy",
+    "start": "npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "jsdom": "^20.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.53.0",
+    "tailwindcss": "^3.1.4"
+  }
+}
