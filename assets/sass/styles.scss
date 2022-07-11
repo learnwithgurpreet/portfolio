@@ -157,26 +157,13 @@ header {
     display: inline-block;
     margin-bottom: 1rem;
     position: relative;
-    &:before {
-      border-radius: 5px;
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-      transition: background-color;
-    }
-    &:hover {
-      &:before {
-        transition-duration: 0.5s;
-        background-color: transparent;
-      }
-    }
+    overflow: hidden;
+    border-radius: 5px;
     img {
       width: 100%;
       border-radius: 5px;
+      transition: all;
+      transition-duration: 0.2s;
     }
     &__title {
       font-size: 28px;
@@ -194,6 +181,10 @@ header {
       top: 0;
       bottom: 0;
       z-index: 1;
+
+      &:hover+img {
+        transform: scale(1.1);
+      }
     }
     &__body {
       position: absolute;
