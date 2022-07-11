@@ -1,9 +1,9 @@
 const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
-const { JSDOM } = require("jsdom");
-const package = require("./package.json")
+const Image = require("@11ty/eleventy-img");
+const package = require("./package.json");
 
 const cacheBusterOptions = {
-  createResourceHash(outputDirectoy, url, target) {
+  createResourceHash(outputDirectory, url, target) {
     const { version } = package;
     return version;
   },
@@ -15,20 +15,27 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setTemplateFormats("njk");
   eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
 
-  eleventyConfig.addTransform("lazy-load-images", (content, outputPath) => {
-    if (outputPath.endsWith(".html")) {
-      const dom = new JSDOM(content);
-      const document = dom.window.document;
+  async function imageShortcode(src, alt, classList = "", sizes = "100vw") {
+    let metadata = await Image(src, {
+      widths: [400, 640],
+      formats: ["avif", "jpeg", "webp"],
+      outputDir: "_site/assets/images/",
+      urlPath: "/assets/images/",
+      sharpOptions: {
+        animated: true,
+      },
+    });
 
-      const [...images] = document.getElementsByTagName("img");
+    let imageAttributes = {
+      alt,
+      sizes,
+      loading: "lazy",
+      decoding: "async",
+      class: classList,
+    };
 
-      images.forEach((image) => {
-        image.setAttribute("loading", "lazy");
-      });
-
-      return document.documentElement.outerHTML;
-    } else {
-      return content;
-    }
-  });
+    // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+    return Image.generateHTML(metadata, imageAttributes);
+  }
+  eleventyConfig.addNunjucksAsyncShortcode("responsiveImage", imageShortcode);
 };

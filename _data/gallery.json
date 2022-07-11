@@ -1,0 +1,56 @@
+[
+  {
+    "_id": 1,
+    "image_src": "assets/images/boats.jpg",
+    "title": "Boats",
+    "location": "Rajasthan, India"
+  },
+  {
+    "_id": 2,
+    "image_src": "assets/images/fountain.jpg",
+    "title": "Fountain",
+    "location": "Delhi, India"
+  },
+  {
+    "_id": 3,
+    "image_src": "assets/images/piano_man.jpg",
+    "title": "Piano Man",
+    "location": "Frankfurt, Germany"
+  },
+  {
+    "_id": 4,
+    "image_src": "assets/images/eiffel_tower.jpg",
+    "title": "Eiffel Tower",
+    "location": "Paris, France"
+  },
+  {
+    "_id": 5,
+    "image_src": "assets/images/old_lady.jpg",
+    "title": "Old Lady",
+    "location": "Rajasthan, India"
+  },
+  {
+    "_id": 6,
+    "image_src": "assets/images/ggn.jpg",
+    "title": "Architecture",
+    "location": "Gurugram, India"
+  },
+  {
+    "_id": 7,
+    "image_src": "assets/images/lion.jpg",
+    "title": "Lion",
+    "location": "Rajasthan, India"
+  },
+  {
+    "_id": 8,
+    "image_src": "assets/images/sun_set.jpg",
+    "title": "Fatehsagar Lake",
+    "location": "Rajasthan, India"
+  },
+  {
+    "_id": 9,
+    "image_src": "assets/images/rajasthan.jpg",
+    "title": "Fatehpur Sikri",
+    "location": "Rajasthan, India"
+  }
+]
